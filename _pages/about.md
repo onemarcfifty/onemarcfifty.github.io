@@ -2,6 +2,8 @@
 permalink: /about/
 title: "About"
 toc: true
+header:
+  image: /assets/images/Channelart11.png
 ---
 ## How it all started
 
