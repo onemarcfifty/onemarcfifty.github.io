@@ -1,6 +1,6 @@
 ---
 title: "Impressum"
-permalink: /impressum_de.html
+permalink: /impressum_de/
 author_profile: true
 sitemap: false
 toc: true

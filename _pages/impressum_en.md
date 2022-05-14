@@ -1,6 +1,6 @@
 ---
 title: "Service Provider"
-permalink: /impressum_en.html
+permalink: /impressum_en/
 author_profile: true
 sitemap: false
 toc: true
