@@ -1,0 +1,63 @@
+---
+layout: single
+permalink: /subjects/
+title: Subjects
+nav_title: "Browse"
+toc: true
+---
+
+{% comment %}
+=======================
+The following part extracts all the tags from your posts and sort tags, so that you do not need to manually collect your tags to a place.
+=======================
+{% endcomment %}
+{% assign rawtags = "" %}
+{% for post in site.documents %}
+	{% assign ttags = post.tags | join:'|' | append:'|' %}
+	{% assign rawtags = rawtags | append:ttags %}
+{% endfor %}
+{% assign rawtags = rawtags | split:'|' | sort %}
+
+{% comment %}
+=======================
+The following part removes dulpicated tags and invalid tags like blank tag.
+=======================
+{% endcomment %}
+{% assign tags = "" %}
+{% for tag in rawtags %}
+	{% if tag != "" %}
+		{% if tags == "" %}
+			{% assign tags = tag | split:'|' %}
+		{% endif %}
+		{% unless tags contains tag %}
+			{% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
+		{% endunless %}
+	{% endif %}
+{% endfor %}
+
+{% comment %}
+=======================
+The purpose of this snippet is to list all your posts posted with a certain tag.
+=======================
+{% endcomment %}
+
+{% for tag in tags %}
+
+	<h3 id="{{ tag }}">{{ tag }}</h3>
+  <hr>
+
+    {% for post in site.documents %}
+    {% if post.tags contains tag %}
+
+		<article class="news">
+			<h4 class="news-title"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+			<h5 style="color: grey">{{ post.authors }}</h5>
+			<div class="news-date" style="color:#4e2a84;">{{ post.department }}</div>
+			<div class="news-description">{{ post.abstract | truncatewords: 50 }} <a href="{{ post.url }}">View the visualization.</a></div>
+			<div class="news-description">{{ post.content | truncatewords: 50 }} <a href="{{ post.url }}">View the visualization2.</a></div>
+		</article>
+
+	 {% endif %}
+	 {% endfor %}
+
+{% endfor %}
