@@ -36,6 +36,8 @@ And there you go - you can install Windows 11 either in a virtual environment su
 
 ## How to run Hyper-V on Proxmox
 
+**WARNING! This is highly experimental !!! See the Side effects section below**
+
 If you want to enable let's say WSL2 in your Windows 11 VM then you need to enable Hyper-V. Hyper-V is a type 1 hypervisor, i.e. it expects to run on physical hardware. If you just create a VM on Proxmox without further customization, then the task manager inside Windows 11 would show the CPU as KVM CPU and refuse to start. The paravirtualization features of Hyper-V actually needs a bunch of features from the CPU which are not passed on to the VM which are called enlightenments (google for hyper-v enlightenments). The trick is now to tell KVM/QEMU that it should not present a KVM CPU to the VM but rather the hosts CPU and enable those enlightenments.
 
 I did this on my AMD Ryzen9 with the following parameters (you might not need all of them plus they might look different on Intel hardware):
@@ -75,5 +77,7 @@ Windows 11 now correctly reports the CPU in task manager:
 
 My primary goal was to run WSL2 for testing. It runs fine inside Windows 11. All you have to do is install it with `wsl --install -d debian` for example.
 
-As we run the hypervisor on top of a virtualized environment, the machine is roughly 25% slower (as the virtualization layer below needs to emulate the hardware) - besides that, I have seen no side effects so far.
+As we run the hypervisor on top of a virtualized environment, the machine is roughly 25% slower (as the virtualization layer below needs to emulate the hardware) - ~~besides that, I have seen no side effects so far.~~ **After the 2nd reboot I ran into issues**
+
+I had been working intensively with snapshots, therefore I initially did not realize that there is a big problem. After the 2nd reboot this did not work any more. After 10 minutes or so the machine went to high CPU utilization )100%) and became unusable. Checking the forums it turns out that this is a known . Things seem to be fixed with Kernel version 5.15 - I will update here as soon as I have more info. **For the time being this does not work on AMD Ryzen**
 
