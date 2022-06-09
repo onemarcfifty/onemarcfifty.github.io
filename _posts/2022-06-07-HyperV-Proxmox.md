@@ -79,5 +79,5 @@ My primary goal was to run WSL2 for testing. It runs fine inside Windows 11. All
 
 As we run the hypervisor on top of a virtualized environment, the machine is roughly 25% slower (as the virtualization layer below needs to emulate the hardware) - ~~besides that, I have seen no side effects so far.~~ **After the 2nd reboot I ran into issues**
 
-I had been working intensively with snapshots, therefore I initially did not realize that there is a big problem. After the 2nd reboot this did not work any more. After 10 minutes or so the machine went to high CPU utilization )100%) and became unusable. Checking the forums it turns out that this is a known . Things seem to be fixed with Kernel version 5.15 - I will update here as soon as I have more info. **For the time being this does not work on AMD Ryzen**
+I had been working intensively with snapshots, therefore I initially did not realize that there is a big problem. After the 2nd reboot this did not work any more. After 10 minutes or so the machine went to high CPU utilization (100%) and became unusable. Checking the forums it turns out that this is a known issue. Things seem to be fixed with Kernel version 5.15 - I will update here as soon as I have more info. **For the time being this does not work on AMD Ryzen**
 
