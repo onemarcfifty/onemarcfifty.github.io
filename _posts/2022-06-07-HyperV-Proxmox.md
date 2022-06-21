@@ -1,6 +1,6 @@
 ---
 title: "Windows 11 with Hyper-V on Proxmox"
-last_modified_at: 2022-06-07T17:00:00
+last_modified_at: 2022-06-22T17:00:00
 categories:
   - Blog
 tags:
@@ -77,7 +77,19 @@ Windows 11 now correctly reports the CPU in task manager:
 
 My primary goal was to run WSL2 for testing. It runs fine inside Windows 11. All you have to do is install it with `wsl --install -d debian` for example.
 
-As we run the hypervisor on top of a virtualized environment, the machine is roughly 25% slower (as the virtualization layer below needs to emulate the hardware) - ~~besides that, I have seen no side effects so far.~~ **After the 2nd reboot I ran into issues**
+As we run the hypervisor on top of a virtualized environment, the machine is roughly 25% slower (as the virtualization layer below needs to emulate the hardware) - ~~besides that, I have seen no side effects so far.~~ ~~**After the 2nd reboot I ran into issues~~
 
-I had been working intensively with snapshots, therefore I initially did not realize that there is a big problem. After the 2nd reboot this did not work any more. After 10 minutes or so the machine went to high CPU utilization (100%) and became unusable. Checking the forums it turns out that this is a known issue. Things seem to be fixed with Kernel version 5.15 - I will update here as soon as I have more info. **For the time being this does not work on AMD Ryzen**
+~~I had been working intensively with snapshots, therefore I initially did not realize that there is a big problem. After the 2nd reboot this did not work any more. After 10 minutes or so the machine went to high CPU utilization (100%) and became unusable. Checking the forums it turns out that this is a known issue. Things seem to be fixed with Kernel version 5.15 - I will update here as soon as I have more info. For the time being this does not work on AMD Ryzen~~
 
+## All working in Kernel 5.15
+
+After an upgrade of the Proxmox Kernel to Version 5.15 everything is working like a charm!
+
+    root@pve2:~# uname -r
+    5.15.35-2-pve
+
+The issues I had with GPU passthrough could be resolved by adding the folowing to the `/etc/default/grub` file:
+
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on iommu=pt video=vesafb:off video=efifb:off initcall_blacklist=sysfb_init"
+
+The key component here is the `initcall_blacklist=sysfb_init` statement in order to prevent bootfb from holding on to the GPU
