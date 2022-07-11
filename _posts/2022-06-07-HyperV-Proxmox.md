@@ -9,12 +9,12 @@ tags:
   - Hyper-V
 toc: true
 header:
-    teaser: /assets/images/Channelart11b.png
+    teaser: /assets/images/blogimages/Win11_WSL2_on_proxmox.jpg
 ---
 
-## How to install Windows 11 on Proxmox
+## How to install Windows 11 without TPM on Proxmox
 
-The Windows 11 installer by default needs the "Trusted Platform Module" (TPM) and Secure Boot enabled. In a virtual environment such as KVM / QEMU (like we have it in Proxmox) those are not available. However, you can circumvent the TPM and Secure Boot checks by doing the following:
+The Windows 11 installer by default needs the "Trusted Platform Module" (TPM) and Secure Boot enabled. In a virtual environment such as KVM / QEMU (like we have it in Proxmox) those are not available. (Update - on Proxmox 7 you can enable it, on Proxmox 6 you can't) However, you can circumvent the TPM and Secure Boot checks by doing the following:
 
 When the installation starts, you can type Shift-F10 in order to get to a command prompt. Inside that command prompt you can launch the registry editor by typing `regedt32` or `regedit` - now add the following key:
 
@@ -88,7 +88,7 @@ After an upgrade of the Proxmox Kernel to Version 5.15 everything is working lik
     root@pve2:~# uname -r
     5.15.35-2-pve
 
-The issues I had with GPU passthrough could be resolved by adding the folowing to the `/etc/default/grub` file:
+The issues I had with GPU passthrough could be resolved by adding the following to the `/etc/default/grub` file:
 
     GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on iommu=pt video=vesafb:off video=efifb:off initcall_blacklist=sysfb_init"
 

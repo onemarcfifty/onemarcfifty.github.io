@@ -11,6 +11,8 @@ header:
     teaser: /assets/images/Channelart11b.png
 ---
 
+## Discord session to install a Test Network for Proxmox
+
 We will run project sessions on the <a href="https://discord.com/invite/DXnfBUG">Discord Server</a> every 3 weeks or so.
 
 Our first project will be to build a ***ProxMox sandbox*** - that means, we will add a virtual network with a ***graphical client*** running in a Linux container plus a ***VM running an OpenWrt image***.

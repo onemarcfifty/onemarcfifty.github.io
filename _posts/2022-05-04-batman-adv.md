@@ -13,6 +13,8 @@ videotitle: DIY MESH WiFi with batman-adv and OpenWrt
 header:
   teaser: /assets/images/thumbnails/t4A0kfg2olo.jpg
 ---
+## DIY Wi-fi Mesh with batman-adv and OpenWrt for Everyone!
+
 
 DIY Wifi Mesh for everyone with commodity Hardware and Free and Open Source Software OpenWrt! The **B.A.T.M.A.N. advanced protocol** can be used to build a mesh of virtually any size ! Wired and Wi-fi ! 
 

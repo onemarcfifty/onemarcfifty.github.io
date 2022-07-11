@@ -14,6 +14,8 @@ header:
   teaser: /assets/images/thumbnails/Q-xDtCxnD0Q.jpg
 ---
 
+## DNS Filtering - no more ads with Pihole or AdGuard
+
 No more ads - and parental control. Those are two use cases for ad blockers and DNS Filters like **AdGuard Home** or **Pi-hole (R)**. Privacy and protection of your data in the internet, blocking ads and the use of DNS White Lists or Black Lists. 
 
 <a href="https://www.youtube.com/watch?v={{page.videoid}}"><img src="/assets/images/thumbnails/{{page.videoid}}.jpg">Watch the video on YouTube</a>

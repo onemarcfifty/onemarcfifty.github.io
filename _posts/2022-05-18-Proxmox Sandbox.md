@@ -12,7 +12,7 @@ header:
 
 (A video version of this blog is available on Youtube : [Watch it on YouTube](https://youtu.be/R67wEo2V710) 
 
-## Why would I want a Sandbox?
+## Why would I want a Test Sandbox on Proxmox?
 
 Sometimes I need to have a test sandbox. A virtual representation of my LAN really. Why? Here are some things that I want to rather do in a sandbox than in my real LAN:
 

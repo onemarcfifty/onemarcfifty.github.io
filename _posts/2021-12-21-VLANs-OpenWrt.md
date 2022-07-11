@@ -14,6 +14,8 @@ header:
   teaser: /assets/images/thumbnails/qeuZqRqH-ug.jpg
 ---
 
+## The VLAN Konfiguration has changed in OpenWrt 21.02 - Bridge VLAN Filtering and Distributed Switch Architecture (DSA)...
+
 The VLAN Konfiguration has changed in OpenWrt 21.02 - Bridge VLAN Filtering and Distributed Switch Architecture (DSA) change the way we configure the network segmentation in a Guest, IOT and LAN Network. 
 
 <a href="https://www.youtube.com/watch?v={{page.videoid}}"><img src="/assets/images/thumbnails/{{page.videoid}}.jpg">Watch the video on YouTube</a>

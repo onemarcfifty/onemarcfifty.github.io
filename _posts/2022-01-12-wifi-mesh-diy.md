@@ -13,6 +13,8 @@ header:
   teaser: /assets/images/thumbnails/vVoZppb_FR0.jpg
 ---
 
+## A DIY 802.11s Wi-fi Mesh with OpenWrt
+
 We will build a DIY 802.11s Wi-fi mesh with OpenWrt and two cheap commodity consumer routers using fast roaming 802.11r. Please use my affiliate links if you want to buy them
 
 <a href="https://www.youtube.com/watch?v={{page.videoid}}"><img src="/assets/images/thumbnails/{{page.videoid}}.jpg">Watch the video on YouTube</a>
