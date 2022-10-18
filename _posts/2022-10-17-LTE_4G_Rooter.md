@@ -1,5 +1,5 @@
 ---
-title: "IPv6 from scratch"
+title: "DIY LTE/4G Rooter"
 last_modified_at: 2022-10-17T17:00:00
 categories:
   - Blog
