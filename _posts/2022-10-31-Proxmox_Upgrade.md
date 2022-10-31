@@ -5,8 +5,8 @@ categories:
   - Blog
   - Video
 tags:
-  - Networking
-  - OpenWrt
+  - Proxmox
+  - Linux
 videoid: 3UMx7P5n91Y
 videotitle: "How I upgraded and reverted Proxmox from 6 to 7 to 6 with UEFI boot and GRUB"
 toc: true

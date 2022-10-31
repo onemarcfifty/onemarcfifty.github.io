@@ -5,8 +5,8 @@ categories:
   - Blog
   - Video
 tags:
-  - Networking
-  - OpenWrt
+  - Ansible
+  - Devops
 videoid: Vt2hDEONSUs
 videotitle: "How to build a nice Ansible Working Environment with Rundeck and vscode server"
 toc: true
