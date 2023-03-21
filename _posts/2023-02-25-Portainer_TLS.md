@@ -19,7 +19,7 @@ We can give Portainer self-signed _server_ certificates with the `--sslcert` and
 
 ## the Solution
 
-the solution is more kind of a workaround really. What I ended up doing was to instal the Root CA ont he Docker host and provide a copy of the complete RootCA crt file to Portainer. Assuming that your Server key and certificate as well as the rootCA.crt are in /etc/certificates/example.com, run the following on your Docker host:
+the solution is more kind of a workaround really. What I ended up doing was to install the Root CA on the Docker host and provide a copy of the complete RootCA crt file to Portainer. Assuming that your Server key and certificate as well as the rootCA.crt are in /etc/certificates/example.com, run the following on your Docker host:
 
 ```bash
 # copy the Root CA file to the system certificate subfolder
